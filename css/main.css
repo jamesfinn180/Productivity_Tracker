@@ -6,6 +6,7 @@
 		font-family: 'Encode Sans', sans-serif;
 		font-size:16px;
 		outline:none;
+		background:cadetblue;
 
 		transition:all 1s;
 	}
@@ -45,6 +46,7 @@
 		background:white;
 		color:black;
 		cursor:pointer;
+		height:45px;
 		border:solid 1px black;
 	}
 
