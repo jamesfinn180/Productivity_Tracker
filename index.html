@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Productivity</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">	
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	</head>
+
+	<body>
+		
+		<h1 id="heading" class="heading">Productivity</h1>
+
+		<section class="total-progress">
+			<div id="total-progress__bar" class="total-progress__bar"></div>
+			<h2 class="total-progress__time">Total time: <span id="total-time">00:00</span></h2>
+		</section>
+
+		<ul class="list">
+			<!-- <li>
+				<button class="play"   onclick="taskArray[0].startTimer()">!></button>
+				<button class="pause"  onclick="taskArray[0].pauseTimer()">!!</button>
+				<button class="delete" onclick="taskArray[0].deleteTimer()">x</button>
+				<span class="time t0">0</span><span class="time-goal">2 hr</span><input value="Study">
+			</li> -->
+		</ul>
+
+		<div class="btn-holder">
+			<button class="btn btn--create" onclick="createNewTask(true)">Create New Task</button>
+			<button class="btn btn--delete-all" onclick="deleteEverything()">Delete All</button>
+		</div>
+		
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
