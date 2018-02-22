@@ -53,7 +53,6 @@
 			// Progress Bar
 		progressBar() {
 			let progress = (this.time/this.goal)*100;	
-			console.log(progress)
 							
 			if(progress <= 100) {
 				return progress + "%";
@@ -74,8 +73,12 @@
 		document.getElementById("total-time").innerText = toHHMMSS(progressTotal);
 
 		for(let i=0; i<taskArray.length; i+=1) {
+			// console.log(taskArray[i]);
 			if(taskArray[i] != null) {
 				document.getElementsByClassName("progress-div-t" + taskArray[i].name)[0].style.width = ((taskArray[i].time/progressTotal)*100) + "%"; 
+			}
+			else {
+				console.log(taskArray[i]);
 			}
 		}
 	}
@@ -104,7 +107,7 @@
 			taskArray[num] = new Timer("t" + num);
 			window.localStorage.data = JSON.stringify(taskArray);
 		}
-		else  taskArray[num] = new Timer("t" + num, taskArray[num].time, taskArray[num].task, taskArray[num].goal);
+		else taskArray[num] = new Timer("t" + num, taskArray[num].time, taskArray[num].task, taskArray[num].goal);
 		
 		// List Item
 		let li = document.createElement("li");
@@ -124,14 +127,16 @@
 		                	<div class="list__task__progress-bar__ball"></div>
 		                </div>`;
 
+		// Create options for select box
 		for(let i=0; i<goalTimeArr.length; i+=1) {
 			li.getElementsByClassName("list__task__time__select")[0].innerHTML += `<option value="${goalTimeArr[i][0]}">${goalTimeArr[i][1]}</option>`;
 		}
-
+		// Set current time as default option
 		li.getElementsByClassName("list__task__time__select")[0].value = taskArray[num].goal;
 		document.getElementsByClassName("list")[0].appendChild(li);
-
-		document.getElementsByClassName("list__task__input")[num].focus();
+		
+		//console.log(document.getElementsByTagName("li").length);
+		document.getElementsByClassName("list__task__input")[(document.getElementsByTagName("li").length)-1].focus();
 
 		
 		// Total Progress Div
